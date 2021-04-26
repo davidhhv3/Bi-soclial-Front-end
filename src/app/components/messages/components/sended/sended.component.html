@@ -1,0 +1,50 @@
+<div class="col-lg-8">
+    <h3>{{title}}</h3>
+    <!-- listado mensajes enviados -->
+
+    <div class="mensajes" *ngIf="messages">
+        <div *ngFor="let message of messages" >
+             <div class="cadaMensaje" *ngIf="message.emitter">                  
+                <a href="">
+                    <img class="imagenUs" src="{{url + 'get-image-user/'  + message.emitter.image}}"  *ngIf="message.emitter.image">
+                    <img class="imagenUs" src="assets/user.png"  *ngIf="!message.emitter.image">
+                </a> 
+                 <div class="datosPersona">
+                     
+                    <a [routerLink]="['/perfil', message.emitter._id]">
+                      <div class="nombreCompleto">{{ message.emitter.name + ' ' +  message.emitter.surname }}</div>
+                      &nbsp;|&nbsp;
+                        <span >
+                            {{(message.created_at  | amFromUnix) | amLocale: 'es'| amTimeAgo}}                            
+                        </span >
+                        &nbsp;|&nbsp;
+
+                        <div class="row">
+                            <div class="col-4">Enviado a</div>
+                            <div class="col">
+                                <a [routerLink]="['/perfil',message.receiver._id]">
+                                    {{ message.receiver.name + ' '+ message.receiver.surname}}
+                                </a> 
+                            </div>
+                        </div>                
+
+                                                                                   
+                        
+
+
+
+                      <div class="apodo">{{ message.emitter.nick}}</div>
+                      <div>{{message.text}}</div>
+                    </a>
+                </div> 
+            </div>             
+        </div>
+
+        <!-- paginacion -->
+         <ul class="pagination">
+            <li *ngIf="page > 1"><a [routerLink]="['/mensajes/enviados', prev_page]">Anterior</a></li>
+            <li *ngIf="pages != page"><a [routerLink]="['/mensajes/enviados', next_page]">Siguiente</a></li> 
+        </ul>   
+    </div>
+     
+</div>

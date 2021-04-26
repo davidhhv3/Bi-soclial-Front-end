@@ -1,0 +1,58 @@
+h1{
+    margin-left:20px;    
+}
+a{
+    text-decoration:none;    
+}
+.cadaPublicacion{
+    margin-left:20px;
+    margin-bottom: 20px;
+    border:1px lightgray solid;
+    padding: 10px;
+    width: calc(100% - 20px);
+}
+.cadaPublicacion a{
+    float:left;
+}
+.cadaPublicacion .datosPersona{
+    display: inline-block;    
+    margin-left: 10px;
+}
+.cadaPublicacion #imagenUs{
+    width: 55px;
+    height: 55px;
+    border-radius: 100px;        
+}
+.publicacionText{
+    font-weight:bold;
+}
+#btnVerMas{
+    margin-bottom: 30px;
+}
+.date{
+    color: gray;
+}
+button{
+    float: right;
+    position: relative;
+    top:-40px;
+    background:rgb(22, 190, 36);
+    color: white;
+    border:none;
+    border-radius: 4px;    
+}
+button:hover{
+    background:green;    
+}
+#imgPublicacion{
+    width: 400px;
+    height: 430px;
+       
+}
+#botonImagen{
+    margin-right: -372px;
+}
+#botonBorrarPub{
+     margin-right: -400px;    
+     background-color: red;
+}

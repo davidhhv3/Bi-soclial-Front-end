@@ -1,0 +1,66 @@
+h1{
+    margin-left:20px;    
+}
+ a{
+    float:left;
+}
+.datosPersona{
+    display: inline-block;    
+    margin-left: 10px;
+}
+.imagenUs{
+    width: 155px;
+    height: 155px;
+    border-radius: 100px; 
+    margin-left: 15px;   
+}
+.datosPersona{
+    margin-left: 19px;
+    margin-top: 51px;
+}
+.nombreCompleto{
+    font-weight:bold;
+}
+.apodo{
+    color: gray;
+}
+button{
+    border:1px lightgray solid;
+    color: white;
+    border-radius: 6px;
+    padding: 5px;
+    margin-left: 19px;
+}
+#btnSeguir{
+    background-color: yellowgreen;
+}
+#btnDejarDeSeguir{
+    background: blue;
+}
+.teSigueNoteSigue{
+    background-color: gray;
+    color: white;
+    display: inline-block;
+    position: relative;
+    top: -51px;
+    font-size: 10px;
+}
+#perNameSurn{
+    position: relative;
+    top: -47px;
+}
+#statsContainer{    
+    display: inline-block;
+    position: relative;    
+}
+.stats{
+    float: left;
+    
+    display: block;
+    border-right:1px lightgray solid;
+    padding: 0px 16px 0px 18px;
+}
+
+a{
+    text-decoration: none;
+}

@@ -1,0 +1,70 @@
+<div id="sidebarContainer"> 
+  <h1>Hola {{identity.name}}</h1>
+  <hr>
+  <div id="datosyEstadisticas">    
+    <div class="avatar">
+        <img class="imagenUser" src="{{url + 'get-image-user/' + identity.image}}" *ngIf="identity.image">
+        <img class="imagenUser" src="assets/user.png" *ngIf="!identity.image">
+    </div>
+    <div class="userName">
+        <a [routerLink]="['/perfil',identity._id]">
+            {{identity.name + ' ' + identity.surname}}
+        </a>
+        <p>{{identity.nick}}</p>        
+    </div>
+    <div class="clearfix"></div>
+    <hr>
+
+    <div id="statsContainer"> 
+
+        <div class="stats" *ngIf="stats">
+            <a [routerLink]="['/siguiendo',identity._id,1]">
+                <span  style="font-weight: bold;color: black;">
+                    Siguiendo
+                </span>
+                <span class="spanNumero">
+                    {{stats.following}}
+                </span>
+            </a>
+        </div>
+       
+        <div class="stats" *ngIf="stats">
+            <a [routerLink]="['/seguidores',identity._id,1]">
+                <span style="font-weight: bold;color: black;">
+                    Seguidores
+                </span>
+                <span class="spanNumero">
+                    {{stats.followed}}
+                </span>
+            </a>
+        </div>
+        <div class="stats" *ngIf="stats">
+            <a [routerLink]="['/perfil',identity._id]">
+                <span  style="font-weight: bold;color: black;">
+                    Publicaciones
+                </span>
+                <span class="spanNumero">
+                    {{stats.publications}}
+                </span>
+            </a>
+        </div>
+    </div>
+  </div>
+  <!-- formulario publicaciones -->
+<div id="formPublicaciones"> 
+    <div class="alert alert-success" *ngIf="status == 'success'">
+        Publicacion enviada correctemente         
+    </div>
+    <div class="alert alert-danger" *ngIf="status == 'error'">
+        Publicacion no enviada          
+    </div>      
+    <form action="" #newPubForm="ngForm" >
+      <label>¿Que estas pensado hoy?</label>
+      <textarea name="" id=""  name="publication" [(ngModel)]="publication.text "></textarea>
+      <label>¿Subir foto?</label>   
+      <input type="file" placeholder="Subir imagen"  (change)="fileChangeEvent($event)" ><!--(change) para subir foto  -->
+      <input id='btnEnviar' type="button" value="Enviar" (click)="onSubmit(newPubForm,$event);" [disabled]="!newPubForm.form.valid">
+             <!-- el sendPublication($event) se utiliza para refrescar automaticamente y sin cargar pagina al hacer una publicacion -->
+   </form>
+</div>
+</div>

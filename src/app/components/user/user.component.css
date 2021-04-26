@@ -1,0 +1,63 @@
+
+h1{
+    margin-left:20px;    
+}
+a{
+    
+    color: black;
+}
+.cadaPersona{
+    margin-left:20px;
+    margin-bottom: 20px;
+    border:1px lightgray solid;
+    padding: 10px;
+    width: calc(100% - 20px);
+}
+.cadaPersona a{
+    float:left;
+}
+.cadaPersona .datosPersona{
+    display: inline-block;    
+    margin-left: 10px;
+}
+.imagenUs{
+    width: 55px;
+    height: 55px;
+    border-radius: 100px;    
+}
+.nombreCompleto{
+    font-weight:bold;
+}
+.pagination a{
+    text-decoration: none;    
+}
+.pagination li{
+    background-color: lightgray;
+    padding: 5px;
+    box-shadow: 2px 2px 5px #999;
+    margin-left: 10px;
+}
+.pagination li:hover{
+    background-color: rgb(173, 169, 169); 
+}
+.botones{    
+    float:right;
+}
+.botones button{
+    border:1px lightgray solid;
+    color: white;
+    border-radius: 6px;
+    padding: 5px;
+}
+#seguir{
+    background-color: yellowgreen;
+}
+#siguiendo{
+    color: black;
+}
+#dejardeseguir{
+    background: blue;
+}
+#dejardeseguir:hover{
+    background-color: red;
+}

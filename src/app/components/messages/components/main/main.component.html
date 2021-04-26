@@ -1,0 +1,33 @@
+<div class="row" >
+<div class="col-lg-4">
+    <h3>{{title}}</h3>
+    <div class="sidebar-admin">
+        <ul class="list-group">
+            <li class="list-group-item " aria-current="true" >
+                <a [routerLink]="['enviar']">Enviar mensaje</a>
+            </li>
+            <li class="list-group-item " >
+                <a [routerLink]="['recibidos']">Mensajes recibidos</a>
+            </li>
+            <li class="list-group-item ">
+                <a [routerLink]="['enviados']">Mensajes enviados</a>
+            </li>
+            <li class="list-group-item " >
+                <a [routerLink]="['/home']">Informacion</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+<div class="col-lg-8">
+    <!-- componentes -->  
+    <router-outlet></router-outlet>  
+</div>
+
+</div>
+
+

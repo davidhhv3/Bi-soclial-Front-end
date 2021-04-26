@@ -1,0 +1,31 @@
+
+<div class="publicacion" >
+    
+    
+    <hr>
+    <div *ngFor="let publication of publications" >
+        <div class="cadaPublicacion" >
+            <a href="">
+                <img id="imagenUs" src="{{url + 'get-image-user/'  + publication.user.image}}" *ngIf="publication.user.image">
+                <img id="imagenUs" src="assets/user.png" *ngIf="!publication.user.image"> 
+            </a>
+
+            <div class="datosPersona" >
+                <span class="nombreCompleto">{{publication.user.name + ' ' + publication.user.surname }}</span>
+                &nbsp;|&nbsp;
+                <span class="date">
+                    {{(publication.created_at  | amFromUnix) | amLocale: 'es'| amTimeAgo}}                            
+                </span >
+                <div class="publicacionText">{{publication.text}}</div>
+            </div>
+        </div>       
+    </div>
+    <div *ngIf="page != pages && pages != 0">
+        
+        <input id="btnVerMas" type="button" value="Ver mas publicaciones" (click)="viewMore()" *ngIf="!noMore">    
+    </div>
+    
+
+</div>
+
+

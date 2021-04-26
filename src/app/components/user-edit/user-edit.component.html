@@ -1,0 +1,36 @@
+<div id="formContainer">
+    <form action="">
+        <h1>{{title}}</h1>
+
+        <div id="mensajeSuccess" *ngIf= "status == 'success'">
+            Se han actualizado tus datos correctamente
+        </div>
+
+        <div id="mensajeError" *ngIf= "status == 'error'">
+            No se han podido  actualizar tus datos correctamente
+        </div>
+    
+        <label for="">Nombres</label>
+        <input type="text" name="name"  [(ngModel)]="user.name">
+    
+        <label for="">Apellidos</label>
+        <input type="text" name="surname"  [(ngModel)]="user.surname">
+    
+        <label for="">Nick</label>
+        <input type="text" name="nick"  [(ngModel)]="user.nick">
+    
+        <label for="">Correo electronico</label>
+        <input type="text" name="email"  [(ngModel)]="user.email"> 
+
+        <div *ngIf="user.image">
+            <img src="{{url + 'get-image-user/' + user.image}}" >            
+        </div>
+        
+        <label for="">Sube tu avatar</label>
+        <input type="file" name="" id="" placeholder="Subir imagen" (change)="fileChangeEvent($event)">
+
+
+        <input (click)="onSubmit()" id="btnActualizar" type="button" value="Actualizar datos">
+    
+    </form>
+</div>

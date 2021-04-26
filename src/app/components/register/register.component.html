@@ -1,0 +1,28 @@
+<div class="divContainer" >
+  <div *ngIf="status == 'succes'">
+    Registro completado correctamente <a [routerLink]="['/login']">identificate aqui</a>
+  </div>
+  <div *ngIf="status == 'error'">
+    El registro no ha podido completarce <a [routerLink]="['/login']">identificate aqui</a>
+  </div>
+  <form  >
+    <label for="">Nombre</label>
+    <input type="text" name="name"  #name="ngModel" [(ngModel)]="user.name">
+
+    <label for="">Apellido</label>
+    <input type="text" name="surname"  #surname="ngModel" [(ngModel)]="user.surname">
+
+    <label for="">Nick</label>
+    <input type="text" name="nick"  #nick="ngModel" [(ngModel)]="user.nick">
+
+    <label for="">Email</label>
+    <input type="text" name="email" #email="ngModel" [(ngModel)]="user.email">    
+
+    <label for="">Password</label>
+    <input type="password" name="password"  #password="ngModel" [(ngModel)]="user.password">
+
+    
+
+    <input id="btnRegistro" type="button" value="Registrate"  (click)="onSubmit()" >
+  </form> 
+</div>

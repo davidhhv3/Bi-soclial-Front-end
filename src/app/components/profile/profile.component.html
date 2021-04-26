@@ -1,0 +1,83 @@
+<div id="profileContainer">
+    <div style="float: left;width:65%">
+        <h1> {{title}}</h1>
+        <hr> 
+        <div id="persona" *ngIf="user">
+            <a href="">
+                <img class="imagenUs" src="{{url + 'get-image-user/'  + user.image}}"  *ngIf="user.image">
+                <img class="imagenUs" src="assets/user.png"  *ngIf="!user.image">
+            </a>
+            <div class="datosPersona">
+                <div *ngIf='followed' class="teSigueNoteSigue">
+                    Te sigue
+                </div>  
+                <div *ngIf='!followed' class="teSigueNoteSigue">
+                    No te sigue
+                </div> 
+
+                 <div id="perNameSurn">
+                    <div class="nombreCompleto">{{user.name + ' ' + user.surname }}</div>
+                    <div class="apodo">{{user.nick}}</div>
+                 </div>
+                
+            </div> 
+            <div class="follow">             
+                 
+                 
+                <button *ngIf='!following' (click)="followUser(user._id)" id="btnSeguir"> 
+                    Seguir
+                </button>
+                 
+                <button *ngIf='following' (click)="unfollowUser(user._id)" id="btnDejarDeSeguir"> 
+                    Dejar de Seguir
+                </button>                          
+            </div> 
+              
+        </div>
+
+        <hr>
+
+        <div class="stats" *ngIf="stats">
+            <a [routerLink]="['/siguiendo',user._id, 1]">
+                <span  style="font-weight: bold;color: black;">
+                    Siguiendo
+                </span>
+                <span class="spanNumero">
+                    {{stats.following}}
+                </span>
+            </a>
+        </div>
+        
+       
+        <div class="stats" *ngIf="stats">
+            <a [routerLink]="['/seguidores',user._id,1]">
+                <span style="font-weight: bold;color: black;">
+                    Seguidores
+                </span>
+                <span class="spanNumero">
+                    {{stats.followed}}
+                </span>
+            </a>
+        </div>
+        
+        <div class="stats" *ngIf="stats">
+            <a href="#">
+                <span  style="font-weight: bold;color: black;">
+                    Publicaciones
+                </span>
+                <span class="spanNumero">
+                    {{stats.publications}}
+                </span>
+            </a>
+        </div>
+        <div *ngIf="user">
+            <app-publications [user]="user._id"></app-publications>
+        </div>         
+               
+    </div>      
+    
+    
+    <app-sidebar></app-sidebar>
+</div>
+
+

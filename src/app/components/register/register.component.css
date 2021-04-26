@@ -1,0 +1,26 @@
+label{
+    display: block; 
+    margin-bottom: 10px;   
+}
+input{
+    display: block;
+    margin-bottom: 10px; 
+    width: 100%;
+}
+.divContainer{    
+    width: 400px;
+    border: lightgray 1px solid;
+    margin: auto;
+    padding: 10px;
+    position: relative;
+    top:20px;
+}
+#btnRegistro{
+    background: greenyellow;
+    margin-top: 20px;
+    border: none;
+}
+#btnRegistro:hover{
+    background: green;
+    color:white;
+}

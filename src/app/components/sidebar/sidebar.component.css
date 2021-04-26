@@ -1,0 +1,71 @@
+h1{
+    margin-left:20px; 
+}
+a{
+    text-decoration: none;
+}
+.imagenUser{
+    width: 65px;
+    height: 65px;
+    border-radius: 100px;   
+    float:left;     
+}
+#sidebarContainer{    
+    width: 35%;
+    float: right; 
+    padding: 0px 15px 15px 15px;            
+}
+#datosyEstadisticas{
+    border:1px lightgray solid;
+    padding: 15px;    
+    margin-bottom: 15px;
+}
+.userName {        
+    float:left;
+    margin-left: 15px;    
+}
+.userName a{
+    color:rgb(102, 95, 95)
+}
+p{
+    color:rgb(194, 186, 186);
+}
+#statsContainer{    
+    display: inline-block;
+    position: relative;    
+}
+.stats{
+    float: left;
+    
+    display: block;
+    border-right:1px lightgray solid;
+    padding: 0px 16px 0px 18px;
+}
+.spanNumero{
+    display: block; 
+    width: 3px;
+    margin: auto;  
+    color: black;    
+}
+.spanNumero:hover{
+    color: red;
+}
+/* formulario publicaciones */
+
+#formPublicaciones{
+    border: lightgray 1px solid;
+    padding: 15px;
+    display: inline-block;
+}
+#formPublicaciones textarea{
+    width:80%;   
+}
+#formPublicaciones label{
+    font-weight: bold;
+    width: 90%;      
+}
+#formPublicaciones input{     
+    margin-right: 50px;  
+    margin-bottom: 10px; 
+     
+}

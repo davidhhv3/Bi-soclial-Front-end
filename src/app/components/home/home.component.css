@@ -1,0 +1,27 @@
+.container{
+    background: rgb(234, 236, 238);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 50%;
+}
+#btn1{
+    background: rgb(70, 209, 70);
+    border:none;
+    border-radius: 2px;
+    margin-right: 3px;
+    color:white;    
+}
+#btn2{
+    background: rgb(91, 91, 216);
+    border:none;
+    border-radius: 2px;
+    margin-right: 3px;
+    color:white;
+}
+#btn3{
+    background: white;
+    border:none;
+    border-radius: 2px;
+    margin-right: 3px;    
+}

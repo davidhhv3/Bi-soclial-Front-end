@@ -1,0 +1,24 @@
+
+
+<div *ngIf="status == 'succes'" style="background: goldenrod;">
+    Te has identificado correctamente,bienvenido!! 
+  </div>
+  <div *ngIf="status == 'error'"  style="background: palevioletred;display:inline-block">
+    No te has podido identificar correctamente 
+  </div>
+<form action="">
+     <h1>{{title}}</h1>
+    <label for="">Correo electronico</label>
+    <input type="text" name="email" [(ngModel)]="user.email">
+    <!-- <span *ngIf="email.valid && email.touched">
+        El email no es correcto
+    </span> -->
+
+    <label for="">Password</label>
+    <input type="text" name="password" [(ngModel)]="user.password">
+    <!-- <span *ngIf="password.valid && password.touched">
+        La contraseña es obligatoria
+    </span> -->
+
+    <input id='btnLogin' type="button" value="Entrar" (click)="onSubmit()">
+</form>

@@ -1,0 +1,36 @@
+h1{
+    margin-left:20px;    
+}
+.publicacion{
+    margin-top: 68px;
+    width: 100%;
+}
+.cadaPublicacion{
+    margin-left:20px;
+    margin-bottom: 20px;
+    border:1px lightgray solid;
+    padding: 10px;
+    width: calc(100% - 20px);
+}
+.cadaPublicacion a{
+    float:left;
+}
+.cadaPublicacion .datosPersona{
+    display: inline-block;    
+    margin-left: 10px;
+}
+.cadaPublicacion #imagenUs{
+    width: 55px;
+    height: 55px;
+    border-radius: 100px;        
+}
+.publicacionText{
+    font-weight:bold;
+}
+#btnVerMas{
+    margin-bottom: 30px;
+}
+.date{
+    color: gray;
+}
+

@@ -1,0 +1,51 @@
+<div id="genteContainer">
+  
+  <div style="float: left;width:65%">
+    <h1>{{title}}</h1> 
+    <hr>   
+    <div class="people">
+        <div *ngFor="let user of users" >
+            <div class="cadaPersona" >
+                <a href="">
+                    <img class="imagenUs" src="{{url + 'get-image-user/'  + user.image}}"  *ngIf="user.image">
+                    <img class="imagenUs" src="assets/user.png"  *ngIf="!user.image">
+                </a>
+                <div class="datosPersona">
+                    <a [routerLink]="['/perfil',user._id]">
+                      <div class="nombreCompleto">{{user.name + ' ' + user.surname }}</div>
+                      <div class="apodo">{{user.nick}}</div>
+                    </a>
+                </div>    
+                <div class="botones" *ngIf="user._id != identity._id">
+                    <button id="seguir" *ngIf="follows.indexOf(user._id) < 0" 
+                    (click)="folloeUser(user._id)"
+                    >Seguir</button>
+                    
+                    
+                    <button id="dejardeseguir" *ngIf="follows.indexOf(user._id) >= 0"
+                    (mouseenter)="mouseEnter(user._id)"
+                    (mouseleave)="mouseLeave(user._id)" 
+                    (click)="unfollowUser(user._id)"                  
+                    >
+                        <span *ngIf="user._id == followUserOver;else following">Dejar de seguir</span>
+                        <ng-template #following>                            
+                            <span>Siguiendo</span>
+                        </ng-template>
+                                                
+                    </button>
+                </div>           
+            </div>            
+        </div>
+        <!-- paginacion -->
+        <ul class="pagination">
+            <li *ngIf="page > 1"><a [routerLink]="['/gente', prev_page]">Anterior</a></li>
+            <li *ngIf="pages != page"><a [routerLink]="['/gente', next_page]">Siguiente</a></li> 
+        </ul>
+    </div>
+  </div>
+    <app-sidebar></app-sidebar>
+    
+</div>
+
+
+

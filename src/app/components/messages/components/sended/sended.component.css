@@ -1,0 +1,47 @@
+a{    
+    color: black;
+}
+.cadaMensaje{    
+    margin-left:20px;
+    margin-bottom: 20px;
+    border:1px lightgray solid;
+    padding: 10px;
+     width: calc(100% - 20px); 
+}
+.cadaMensaje a{
+    float:left;
+}
+.cadaMensaje .datosPersona{
+    display: inline-block;    
+    margin-left: 10px;
+}
+.imagenUs{
+    width: 55px;
+    height: 55px;
+    border-radius: 100px;    
+}
+.nombreCompleto{
+    font-weight:bold; 
+    display: inline;   
+} 
+span{
+    color: gray;         
+}
+.col-4{
+    color: gray;
+}
+.col a{
+    color: gray;    
+}
+.pagination a{
+    text-decoration: none;    
+}
+.pagination li{
+    background-color: lightgray;
+    padding: 5px;
+    box-shadow: 2px 2px 5px #999;
+    margin-left: 10px;
+}
+.pagination li:hover{
+    background-color: rgb(173, 169, 169); 
+}

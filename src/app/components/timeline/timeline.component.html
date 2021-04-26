@@ -1,0 +1,69 @@
+<div id="timeLineContainer">
+    <div style="float: left;width:65%">
+        <h1>
+            {{title}}            
+        </h1>
+        <button (click)="refresh($event)">Mostrar nuevas</button>
+        <hr>  
+        <!-- <app-publications></app-publications> -->
+        <div class="publicacion">
+            <div *ngFor="let publication of publications" >
+                <div class="cadaPublicacion" >
+                    <a href="">
+                        <img id="imagenUs" src="{{url + 'get-image-user/'  + publication.user.image}}" *ngIf="publication.user.image">
+                        <img id="imagenUs" src="assets/user.png" *ngIf="!publication.user.image"> 
+                    </a>
+                    
+                    
+                    <div class="datosPersona">
+                        <a [routerLink]="['/perfil',publication.user._id]">
+                            <span class="nombreCompleto">{{publication.user.name + ' ' + publication.user.surname }}</span>
+                        </a>
+                        &nbsp;|&nbsp;
+                        <span class="date">
+                            {{(publication.created_at  | amFromUnix) | amLocale: 'es'| amTimeAgo}}                            
+                        </span >
+                        <div class="publicacionText">{{publication.text}}</div>
+
+                        <div *ngIf="publication.user._id == identity._id "> <!--en el ngif especifico que solo se vera el boton para el usuario que creo dicha pub -->
+                                                                           <!--al orpimir el btn se debe despelgar una ventana para confirmar si quiero eliminar la pub-->
+                            <button id="botonBorrarPub" class="publication-text pull-right" (click)="deletePubliation(publication._id)"
+                            *ngIf="showImage != publication._id">
+                                <span>B</span>
+                            </button>                           
+                        </div>
+                        
+                        
+                        <div *ngIf="publication.file != 'null' ">
+                            <button id="botonImagen" class="publication-text pull-right" (click)="showThisImage(publication._id)"
+                            *ngIf="showImage != publication._id">
+                                <span>I</span>
+                            </button>
+
+                            <button id="botonImagen" class="btn btn-danger pull-right" (click)="hideThisImage(publication._id)"
+                            *ngIf="showImage == publication._id">
+                                <span>I</span>
+                            </button>
+                        </div>
+
+                        <div *ngIf="publication.file != 'null' && showImage == publication._id">
+                            <img id="imgPublicacion" src="{{url + 'get-image-pub/'+ publication.file}}" alt="">
+                        </div>
+                      
+                    </div>
+                   
+
+                </div>
+            </div>
+
+        </div>
+        <div *ngIf="page != pages && pages != 0">
+            <input id="btnVerMas" type="button" value="Ver mas publicaciones" (click)="viewMore()" *ngIf="!noMore">
+        </div>
+        
+
+
+    </div>    
+    <app-sidebar (sended)="refresh($event)"></app-sidebar> <!-- el (sended) se utiliza para refrescar automaticamente y sin cargar pagina al hacer una publicacion -->
+    
+</div>
