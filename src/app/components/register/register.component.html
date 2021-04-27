@@ -1,10 +1,7 @@
 <div class="divContainer" >
-  <div *ngIf="status == 'succes'">
-    Registro completado correctamente <a [routerLink]="['/login']">identificate aqui</a>
-  </div>
-  <div *ngIf="status == 'error'">
-    El registro no ha podido completarce <a [routerLink]="['/login']">identificate aqui</a>
-  </div>
+  
+
+  
   <form  >
     <label for="">Nombre</label>
     <input type="text" name="name"  #name="ngModel" [(ngModel)]="user.name">
