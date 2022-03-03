@@ -17,11 +17,22 @@ export class RegisterComponent implements OnInit {
     private _router: Router,
     private _userService: UserService
   ) {
-      this.user = new User("","","","","","","","");           
+    this.user = new User(
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "ROLE_USER",
+      "", 
+      ""
+     )           
    }
   ngOnInit(): void {
   }
   onSubmit(){
+    
     //console.log(this.user);
     this._userService.register(this.user).subscribe(
       response =>{
